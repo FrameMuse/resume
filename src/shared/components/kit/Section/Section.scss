@@ -1,0 +1,34 @@
+@use "@/shared/styles/tokens" as *;
+
+.section {
+  @include section-shell;
+
+  padding: 0 0 88px;
+  scroll-margin-top: 116px;
+  animation: rise-in 680ms ease both;
+}
+
+.section__header {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.section__eyebrow {
+  @include eyebrow;
+
+  color: var(--color-accent-strong);
+}
+
+.section__title {
+  max-width: 14ch;
+  font: 700 clamp(2rem, 4vw, 3.5rem) / 0.98 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.section__description {
+  max-width: 72ch;
+  color: var(--color-text-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+}

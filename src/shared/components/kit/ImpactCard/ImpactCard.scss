@@ -1,0 +1,88 @@
+@use "@/shared/styles/tokens" as *;
+
+.impact-card {
+  @include surface;
+
+  display: grid;
+  gap: 1.2rem;
+  padding: 1.4rem;
+}
+
+.impact-card__header {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.impact-card__title-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.impact-card__title {
+  font: 700 1.35rem/1.05 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.impact-card__summary {
+  color: var(--color-text-soft);
+  line-height: 1.68;
+}
+
+.impact-card__chips,
+.impact-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.impact-card__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-accent-strong);
+  cursor: pointer;
+  font: 500 0.92rem/1 var(--font-copy);
+}
+
+.impact-card__toggle-icon {
+  transition: transform 220ms ease;
+}
+
+.impact-card__toggle-icon--expanded {
+  transform: rotate(180deg);
+}
+
+.impact-card__details {
+  display: grid;
+  gap: 0.8rem;
+  padding-top: 0.2rem;
+  color: var(--color-text-soft);
+  line-height: 1.68;
+}
+
+.impact-card__detail-list {
+  display: grid;
+  gap: 0.7rem;
+  list-style: none;
+}
+
+.impact-card__detail-list li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.impact-card__detail-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  left: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--color-warm);
+}

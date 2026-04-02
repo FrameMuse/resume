@@ -1,0 +1,46 @@
+@use "@/shared/styles/tokens" as *;
+
+.project-card {
+  @include surface;
+
+  display: grid;
+  gap: 1.1rem;
+  align-content: start;
+  padding: 1.4rem;
+  min-height: 100%;
+}
+
+.project-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  color: var(--color-text-soft);
+  font: 500 0.78rem/1.4 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-card__title {
+  font: 700 1.45rem/1.02 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.project-card__summary {
+  color: var(--color-text-soft);
+  line-height: 1.68;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.project-card__link {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  color: var(--color-accent-strong);
+  font-weight: 500;
+}

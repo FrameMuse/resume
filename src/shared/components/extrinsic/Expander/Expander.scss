@@ -1,0 +1,15 @@
+.expander {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 260ms ease;
+}
+
+.expander--expanded {
+  grid-template-rows: 1fr;
+}
+
+.expander__inner {
+  min-height: 0;
+  overflow: hidden;
+}

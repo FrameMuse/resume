@@ -1,0 +1,55 @@
+@use "@/shared/styles/tokens" as *;
+
+.blog-card {
+  @include surface;
+
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1.3rem;
+  min-height: 100%;
+}
+
+.blog-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--color-text-soft);
+  font: 500 0.78rem/1.4 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-card__title {
+  font: 700 1.2rem/1.12 var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+.blog-card__summary {
+  color: var(--color-text-soft);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card__footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-top: auto;
+}
+
+.blog-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.blog-card__link {
+  color: var(--color-accent-strong);
+  font-weight: 500;
+}

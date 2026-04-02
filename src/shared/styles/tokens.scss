@@ -1,0 +1,55 @@
+:root {
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-copy: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+
+  --color-bg: #efe8da;
+  --color-bg-strong: #e6ddcb;
+  --color-surface: rgba(255, 250, 241, 0.84);
+  --color-surface-strong: #fff8ee;
+  --color-surface-dark: #20242b;
+  --color-text: #1d2127;
+  --color-text-soft: #5b6270;
+  --color-border: rgba(32, 36, 43, 0.14);
+  --color-border-strong: rgba(32, 36, 43, 0.26);
+  --color-accent: #0f8a81;
+  --color-accent-strong: #0b5d57;
+  --color-warm: #cb6e35;
+  --color-warm-soft: #f1d0b7;
+  --color-dark: #20242b;
+  --color-ink-inverse: #f8f5ee;
+
+  --shadow-flat: 0 18px 40px rgba(32, 36, 43, 0.08);
+  --radius-card: 28px;
+  --radius-pill: 999px;
+  --content-width: min(1220px, calc(100vw - 32px));
+}
+
+@mixin surface($tone: "default") {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-flat);
+  backdrop-filter: blur(12px);
+
+  @if $tone == "strong" {
+    background: var(--color-surface-strong);
+  }
+
+  @if $tone == "dark" {
+    background: var(--color-surface-dark);
+    color: var(--color-ink-inverse);
+    border-color: rgba(248, 245, 238, 0.16);
+  }
+}
+
+@mixin section-shell {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+@mixin eyebrow {
+  font: 500 0.78rem/1 var(--font-mono);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

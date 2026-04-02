@@ -1,0 +1,20 @@
+@use "@/shared/styles/tokens" as *;
+
+.metric-badge {
+  @include surface("strong");
+
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.1rem 1.2rem;
+}
+
+.metric-badge__value {
+  font: 700 clamp(1.4rem, 3vw, 2.2rem) / 0.95 var(--font-display);
+  letter-spacing: -0.06em;
+}
+
+.metric-badge__label {
+  color: var(--color-text-soft);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
