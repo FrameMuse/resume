@@ -27,6 +27,12 @@ export interface ProjectEntry {
   title: string
 }
 
+export interface ProjectGroup {
+  description: string
+  projects: ProjectEntry[]
+  title: string
+}
+
 export interface ImpactEntry {
   details: string[]
   indicators: string[]
@@ -156,56 +162,122 @@ export const portfolioContent = {
       stack: ["React", "TypeScript", "PHP", "HTML5", "SCSS", "REST APIs"]
     }
   ] satisfies ExperienceEntry[],
-  projects: [
+  projectGroups: [
     {
-      href: "https://github.com/FrameMuse/react-modal-global",
-      indicator: "28 stars · 4 forks",
-      kind: "Open-source library",
-      summary: "A lightweight modal manager for React that keeps orchestration simple and removes boilerplate from product teams that need global modal flows without heavy state plumbing.",
-      tags: ["React", "TypeScript", "DX"],
-      title: "React Modal Global"
+      title: "Major Portfolio Items",
+      description: "Selected client-facing work from a broader portfolio that also includes Case Simulator and several Standoff projects. This group is here to show shipped product breadth, not only open-source output.",
+      projects: [
+        {
+          href: "https://github.com/FrameMuse/algo-academy",
+          indicator: "Education product",
+          kind: "Major portfolio item",
+          summary: "A representative education-focused product from the public portfolio, useful as evidence of shipping substantial client-facing interfaces rather than only utilities.",
+          tags: ["Education", "Frontend", "Product"],
+          title: "Algo Academy"
+        },
+        {
+          href: "https://github.com/FrameMuse/etukk-front-copy",
+          indicator: "Travel and content platform",
+          kind: "Major portfolio item",
+          summary: "A larger product-facing frontend from the public portfolio, representative of structured application work under real delivery constraints.",
+          tags: ["React", "TypeScript", "Product"],
+          title: "Etukk"
+        },
+        {
+          href: "https://github.com/FrameMuse/creaty-frontend",
+          indicator: "Client platform",
+          kind: "Major portfolio item",
+          summary: "A client-style frontend project that highlights modular UI delivery, branded interface work, and consistency across production implementation.",
+          tags: ["UI", "Frontend", "Delivery"],
+          title: "Creaty"
+        },
+        {
+          href: "https://github.com/FrameMuse/merlines-frontend",
+          indicator: "Production application",
+          kind: "Major portfolio item",
+          summary: "Another shipped application from the broader portfolio, useful for showing repeatable delivery across different product surfaces and teams.",
+          tags: ["React", "Product", "Frontend"],
+          title: "Merlines"
+        }
+      ]
     },
     {
-      href: "https://github.com/FrameMuse/react-i18n-editor",
-      indicator: "In-page workflow",
-      kind: "Developer tooling",
-      summary: "An on-page translation editing tool that brings localization closer to the actual product UI, reducing context switching for teams working with i18next.",
-      tags: ["i18n", "React", "Tooling"],
-      title: "React I18n Editor"
+      title: "Side Projects & Experiments",
+      description: "Smaller self-directed work used to test product ideas, interaction models, workflow improvements, and more personal experiments outside direct client delivery.",
+      projects: [
+        {
+          href: "https://github.com/FrameMuse/react-i18n-editor",
+          indicator: "In-page translation workflow",
+          kind: "Side project",
+          summary: "An on-page translation editing tool that brings localization closer to the actual product UI, reducing context switching for teams working with i18next.",
+          tags: ["i18n", "React", "Tooling"],
+          title: "React I18n Editor"
+        },
+        {
+          href: "https://github.com/FrameMuse/polygon-constructor",
+          indicator: "Geometry interface experiment",
+          kind: "Side project",
+          summary: "A geometry-oriented side project that reflects interest in direct manipulation, shape handling, and less ordinary interaction problems.",
+          tags: ["Geometry", "Interaction", "Experiment"],
+          title: "Polygon Constructor"
+        },
+        {
+          href: "https://github.com/FrameMuse/mzv-news",
+          indicator: "Independent content product",
+          kind: "Side project",
+          summary: "A self-directed content surface that shows independent shipping instincts outside agency or client work.",
+          tags: ["Content", "Product", "Independent"],
+          title: "Mzv News"
+        },
+        {
+          href: "https://github.com/FrameMuse/FrameMuse-Galaxy",
+          indicator: "Visual experiment",
+          kind: "Side project",
+          summary: "A more expressive personal experiment that leans toward the visual and 3D side of frontend curiosity.",
+          tags: ["Visuals", "Three.js", "Experiment"],
+          title: "FrameMuse Galaxy"
+        }
+      ]
     },
     {
-      href: "https://github.com/denshya",
-      indicator: "Framework ecosystem",
-      kind: "Initiative",
-      summary: "A wider initiative around small standardized web tools: reactivity, routing, JSX runtime ideas, UI primitives, and documentation tooling aimed at cleaner frontend foundations.",
-      tags: ["Reactivity", "Runtime", "Architecture"],
-      title: "Denshya"
-    },
-    {
-      href: "https://www.npmjs.com/package/mixedin",
-      indicator: "TC39-aligned mixins",
-      kind: "TypeScript utility",
-      summary: "A multiple-inheritance utility for TypeScript that shows language-level comfort with prototype mechanics, type ergonomics, decorators, and runtime behavior.",
-      tags: ["TypeScript", "Language Design", "Libraries"],
-      title: "Mixedin"
-    },
-    {
-      href: "https://www.npmjs.com/package/svg-bbox-polyfill",
-      indicator: "SSR-adjacent geometry",
-      kind: "Platform utility",
-      summary: "A polyfill for SVG bounding boxes in non-browser environments, useful for rendering pipelines, tests, and systems that need geometry outside the browser runtime.",
-      tags: ["SVG", "SSR", "Geometry"],
-      title: "SVG BBox Polyfill"
-    },
-    {
-      href: "https://github.com/FrameMuse/algo-academy",
-      indicator: "Product delivery",
-      kind: "Portfolio project",
-      summary: "A representative client-facing product from the broader portfolio showing that the public story is not only about libraries, but also about shipped application work.",
-      tags: ["Education", "Frontend", "Product"],
-      title: "Algo Academy"
+      title: "Libraries & Packages",
+      description: "Reusable packages and lower-level utilities that show developer-experience work, DOM or runtime curiosity, and comfort publishing focused abstractions.",
+      projects: [
+        {
+          href: "https://github.com/FrameMuse/react-modal-global",
+          indicator: "28 stars · 4 forks",
+          kind: "Open-source library",
+          summary: "A lightweight modal manager for React that keeps orchestration simple and removes boilerplate from product teams that need global modal flows without heavy state plumbing.",
+          tags: ["React", "TypeScript", "DX"],
+          title: "React Modal Global"
+        },
+        {
+          href: "https://github.com/FrameMuse/node-group",
+          indicator: "No DOM patching",
+          kind: "DOM utility",
+          summary: "A live virtual parent for nodes that shows practical interest in DOM behavior and lightweight structural tooling.",
+          tags: ["DOM", "TypeScript", "Utility"],
+          title: "Node Group"
+        },
+        {
+          href: "https://www.npmjs.com/package/mixedin",
+          indicator: "TC39-aligned mixins",
+          kind: "TypeScript utility",
+          summary: "A multiple-inheritance utility for TypeScript that shows language-level comfort with prototype mechanics, type ergonomics, decorators, and runtime behavior.",
+          tags: ["TypeScript", "Language Design", "Libraries"],
+          title: "Mixedin"
+        },
+        {
+          href: "https://www.npmjs.com/package/svg-bbox-polyfill",
+          indicator: "SSR-adjacent geometry",
+          kind: "Platform utility",
+          summary: "A polyfill for SVG bounding boxes in non-browser environments, useful for rendering pipelines, tests, and systems that need geometry outside the browser runtime.",
+          tags: ["SVG", "SSR", "Geometry"],
+          title: "SVG BBox Polyfill"
+        }
+      ]
     }
-  ] satisfies ProjectEntry[],
+  ] satisfies ProjectGroup[],
   impacts: [
     {
       title: "Webhook funnel with a zero-bug production run",

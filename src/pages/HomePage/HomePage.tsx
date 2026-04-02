@@ -199,14 +199,24 @@ function HomePage() {
         </Section>
 
         <Section
-          description="A mix of adopted OSS, architecture-facing utilities, and representative product work."
+          description="Grouped by role so the overview is easier to scan: major portfolio items, smaller self-directed work, and reusable libraries each get their own space under one Projects highlight."
           eyebrow="Projects"
           id="projects"
-          title="Libraries, experiments, and product-facing work"
+          title="A cleaner overview of shipped work, side projects, and libraries"
         >
-          <div className="home-page__projects-grid">
-            {portfolioContent.projects.map(project => (
-              <ProjectCard key={project.title} {...project} />
+          <div className="home-page__project-sections">
+            {portfolioContent.projectGroups.map(group => (
+              <section key={group.title} className="home-page__project-section">
+                <header className="home-page__project-section-header">
+                  <h3>{group.title}</h3>
+                  <p>{group.description}</p>
+                </header>
+                <div className="home-page__project-section-grid">
+                  {group.projects.map(project => (
+                    <ProjectCard key={project.title} {...project} />
+                  ))}
+                </div>
+              </section>
             ))}
           </div>
         </Section>

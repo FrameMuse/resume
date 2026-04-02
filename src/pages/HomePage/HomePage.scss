@@ -228,7 +228,6 @@
 
 .home-page__bio-grid,
 .home-page__skills-grid,
-.home-page__projects-grid,
 .home-page__impact-grid,
 .home-page__initiative-grid,
 .home-page__blog-grid {
@@ -344,9 +343,42 @@
   background: var(--color-accent);
 }
 
-.home-page__projects-grid,
+.home-page__project-sections {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.home-page__project-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-page__project-section+.home-page__project-section {
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.home-page__project-section-header {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 70ch;
+}
+
+.home-page__project-section-header h3 {
+  font: 700 clamp(1.45rem, 2vw, 2rem) / 1.02 var(--font-display);
+  letter-spacing: -0.05em;
+}
+
+.home-page__project-section-header p {
+  color: var(--color-text-soft);
+  line-height: 1.72;
+}
+
+.home-page__project-section-grid,
 .home-page__impact-grid,
 .home-page__initiative-grid {
+  display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -409,7 +441,7 @@
   .home-page__hero,
   .home-page__bio-grid,
   .home-page__opportunity-card,
-  .home-page__projects-grid,
+  .home-page__project-section-grid,
   .home-page__impact-grid,
   .home-page__initiative-grid,
   .home-page__blog-grid {
