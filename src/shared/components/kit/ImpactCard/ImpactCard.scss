@@ -76,19 +76,19 @@
   transition: grid-template-rows 260ms ease;
 }
 
-.impact-card__toggle-input:checked ~ .impact-card__details-shell {
+.impact-card__toggle-input:checked~.impact-card__details-shell {
   grid-template-rows: 1fr;
 }
 
-.impact-card__toggle-input:checked ~ .impact-card__header .impact-card__toggle-open {
+.impact-card__toggle-input:checked~.impact-card__header .impact-card__toggle-open {
   display: none;
 }
 
-.impact-card__toggle-input:checked ~ .impact-card__header .impact-card__toggle-close {
+.impact-card__toggle-input:checked~.impact-card__header .impact-card__toggle-close {
   display: inline;
 }
 
-.impact-card__toggle-input:checked ~ .impact-card__header .impact-card__toggle-icon {
+.impact-card__toggle-input:checked~.impact-card__header .impact-card__toggle-icon {
   transform: rotate(180deg);
 }
 

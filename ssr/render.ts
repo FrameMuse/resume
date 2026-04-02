@@ -277,11 +277,11 @@ export function renderHomePageDocument(input: { articles: BlogArticle[], basePat
       <section class="home-page__metrics">${portfolioContent.metrics.map(metric => renderMetricBadge(metric)).join("")}</section>
 
       ${renderSection({
-        eyebrow: "Bio",
-        id: "bio",
-        title: "Product-minded engineering with platform instincts",
-        description: "The strongest positioning here is not only frontend implementation. It is senior TypeScript and React engineering with architecture depth, delivery discipline, and a real interest in tools that make the rest of the team faster.",
-        body: `
+    eyebrow: "Bio",
+    id: "bio",
+    title: "Product-minded engineering with platform instincts",
+    description: "The strongest positioning here is not only frontend implementation. It is senior TypeScript and React engineering with architecture depth, delivery discipline, and a real interest in tools that make the rest of the team faster.",
+    body: `
           <div class="home-page__bio-grid">
             <article class="home-page__bio-card">
               <p>${escapeHtml(portfolioContent.profile.summary)}</p>
@@ -297,63 +297,63 @@ export function renderHomePageDocument(input: { articles: BlogArticle[], basePat
             </article>
           </div>
         `
-      })}
+  })}
 
       ${renderSection({
-        eyebrow: "Skills",
-        id: "skills",
-        title: "A stack shaped around delivery, libraries, and maintainable systems",
-        description: "Broad frontend and product coverage, backed by platform thinking and selective full-stack depth.",
-        body: `<div class="home-page__skills-grid">${portfolioContent.skillClusters.map(cluster => `<article class="home-page__skill-card"><h3>${escapeHtml(cluster.title)}</h3><div class="home-page__skill-tags">${cluster.items.map(item => renderChip(item)).join("")}</div></article>`).join("")}</div>`
-      })}
+    eyebrow: "Skills",
+    id: "skills",
+    title: "A stack shaped around delivery, libraries, and maintainable systems",
+    description: "Broad frontend and product coverage, backed by platform thinking and selective full-stack depth.",
+    body: `<div class="home-page__skills-grid">${portfolioContent.skillClusters.map(cluster => `<article class="home-page__skill-card"><h3>${escapeHtml(cluster.title)}</h3><div class="home-page__skill-tags">${cluster.items.map(item => renderChip(item)).join("")}</div></article>`).join("")}</div>`
+  })}
 
       ${renderSection({
-        eyebrow: "Experience",
-        id: "experience",
-        title: "Senior roles with ownership across code, systems, and delivery",
-        description: "Recent years combine framework and library research, client and internal product delivery, audits, backend integrations, and mentoring.",
-        body: `<div class="home-page__experience-list">${portfolioContent.experience.map(entry => `<article class="home-page__experience-card"><div class="home-page__experience-topline"><span>${escapeHtml(entry.company)}</span><span>${escapeHtml(entry.period)}</span></div><h3>${escapeHtml(entry.role)}</h3><p class="home-page__experience-location">${escapeHtml(entry.location)}</p><p class="home-page__experience-summary">${escapeHtml(entry.summary)}</p><ul class="home-page__experience-bullets">${entry.bullets.map(bullet => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul><div class="home-page__experience-stack">${entry.stack.map(item => renderChip(item, "accent")).join("")}</div></article>`).join("")}</div>`
-      })}
+    eyebrow: "Experience",
+    id: "experience",
+    title: "Senior roles with ownership across code, systems, and delivery",
+    description: "Recent years combine framework and library research, client and internal product delivery, audits, backend integrations, and mentoring.",
+    body: `<div class="home-page__experience-list">${portfolioContent.experience.map(entry => `<article class="home-page__experience-card"><div class="home-page__experience-topline"><span>${escapeHtml(entry.company)}</span><span>${escapeHtml(entry.period)}</span></div><h3>${escapeHtml(entry.role)}</h3><p class="home-page__experience-location">${escapeHtml(entry.location)}</p><p class="home-page__experience-summary">${escapeHtml(entry.summary)}</p><ul class="home-page__experience-bullets">${entry.bullets.map(bullet => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul><div class="home-page__experience-stack">${entry.stack.map(item => renderChip(item, "accent")).join("")}</div></article>`).join("")}</div>`
+  })}
 
       ${renderSection({
-        eyebrow: "Projects",
-        id: "projects",
-        title: "A cleaner overview of shipped work, side projects, and libraries",
-        description: "Grouped by role so the overview is easier to scan: major portfolio items, smaller self-directed work, and reusable libraries each get their own space under one Projects highlight.",
-        body: `<div class="home-page__project-sections">${portfolioContent.projectGroups.map(group => `<section class="home-page__project-section"><header class="home-page__project-section-header"><h3>${escapeHtml(group.title)}</h3><p>${escapeHtml(group.description)}</p></header><div class="home-page__project-section-grid">${group.projects.map(project => renderProjectCard(project, spriteHref)).join("")}</div></section>`).join("")}</div>`
-      })}
+    eyebrow: "Projects",
+    id: "projects",
+    title: "A cleaner overview of shipped work, side projects, and libraries",
+    description: "Grouped by role so the overview is easier to scan: major portfolio items, smaller self-directed work, and reusable libraries each get their own space under one Projects highlight.",
+    body: `<div class="home-page__project-sections">${portfolioContent.projectGroups.map(group => `<section class="home-page__project-section"><header class="home-page__project-section-header"><h3>${escapeHtml(group.title)}</h3><p>${escapeHtml(group.description)}</p></header><div class="home-page__project-section-grid">${group.projects.map(project => renderProjectCard(project, spriteHref)).join("")}</div></section>`).join("")}</div>`
+  })}
 
       ${renderSection({
-        eyebrow: "Impact",
-        id: "impact",
-        title: "Interesting impact, kept practical",
-        description: "Selected cases where the work changed team speed, stability, or clarity in a way that mattered beyond just shipping one feature.",
-        body: `<div class="home-page__impact-grid">${portfolioContent.impacts.map(impact => renderImpactCard(impact, spriteHref)).join("")}</div>`
-      })}
+    eyebrow: "Impact",
+    id: "impact",
+    title: "Interesting impact, kept practical",
+    description: "Selected cases where the work changed team speed, stability, or clarity in a way that mattered beyond just shipping one feature.",
+    body: `<div class="home-page__impact-grid">${portfolioContent.impacts.map(impact => renderImpactCard(impact, spriteHref)).join("")}</div>`
+  })}
 
       ${renderSection({
-        eyebrow: "Initiatives",
-        id: "initiatives",
-        title: "Independent directions with a clear point of view",
-        description: "Longer-running directions that describe how I like to build, not only what I have already shipped.",
-        body: `<div class="home-page__initiative-grid">${portfolioContent.initiatives.map(initiative => `<article class="home-page__initiative-card"><div class="home-page__initiative-topline"><span>${escapeHtml(initiative.title)}</span>${renderChip(initiative.status, "warm")}</div><h3>${escapeHtml(initiative.headline)}</h3><p>${escapeHtml(initiative.summary)}</p><div class="home-page__initiative-tags">${initiative.tags.map(tag => renderChip(tag)).join("")}</div></article>`).join("")}</div>`
-      })}
+    eyebrow: "Initiatives",
+    id: "initiatives",
+    title: "Independent directions with a clear point of view",
+    description: "Longer-running directions that describe how I like to build, not only what I have already shipped.",
+    body: `<div class="home-page__initiative-grid">${portfolioContent.initiatives.map(initiative => `<article class="home-page__initiative-card"><div class="home-page__initiative-topline"><span>${escapeHtml(initiative.title)}</span>${renderChip(initiative.status, "warm")}</div><h3>${escapeHtml(initiative.headline)}</h3><p>${escapeHtml(initiative.summary)}</p><div class="home-page__initiative-tags">${initiative.tags.map(tag => renderChip(tag)).join("")}</div></article>`).join("")}</div>`
+  })}
 
       ${renderSection({
-        eyebrow: "Open For Opportunities",
-        id: "opportunities",
-        title: "Available for teams that want depth, not frontend theater",
-        description: "The current fit is strongest where architecture and product delivery are both first-class concerns.",
-        body: `<article class="home-page__opportunity-card"><div class="home-page__opportunity-copy"><p>${escapeHtml(portfolioContent.opportunity.statement)}</p><div class="home-page__opportunity-actions">${renderButton({ basePath, href: portfolioContent.profile.email, iconRight: "arrow-up-right", label: "Discuss a role" })}${renderButton({ basePath, href: portfolioContent.profile.linkedin, label: "View LinkedIn", targetBlank: true, variant: "ghost" })}</div></div><div class="home-page__opportunity-lists"><div><p class="home-page__card-eyebrow">Best role shape</p><ul>${portfolioContent.opportunity.collaboration.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div><div><p class="home-page__card-eyebrow">Preferred problem space</p><ul>${portfolioContent.opportunity.focus.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div></div></article>`
-      })}
+    eyebrow: "Open For Opportunities",
+    id: "opportunities",
+    title: "Available for teams that want depth, not frontend theater",
+    description: "The current fit is strongest where architecture and product delivery are both first-class concerns.",
+    body: `<article class="home-page__opportunity-card"><div class="home-page__opportunity-copy"><p>${escapeHtml(portfolioContent.opportunity.statement)}</p><div class="home-page__opportunity-actions">${renderButton({ basePath, href: portfolioContent.profile.email, iconRight: "arrow-up-right", label: "Discuss a role" })}${renderButton({ basePath, href: portfolioContent.profile.linkedin, label: "View LinkedIn", targetBlank: true, variant: "ghost" })}</div></div><div class="home-page__opportunity-lists"><div><p class="home-page__card-eyebrow">Best role shape</p><ul>${portfolioContent.opportunity.collaboration.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div><div><p class="home-page__card-eyebrow">Preferred problem space</p><ul>${portfolioContent.opportunity.focus.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div></div></article>`
+  })}
 
       ${renderSection({
-        eyebrow: "Blog",
-        id: "blog",
-        title: "Writing about frontend systems, tooling, and product engineering",
-        description: "Nine markdown-backed notes are surfaced here in a strict 3 by 3 grid. The article routes are generated separately for static hosting.",
-        body: `<div class="home-page__blog-grid">${articles.slice(0, 9).map(article => renderBlogCard(article, basePath)).join("")}</div>`
-      })}
+    eyebrow: "Blog",
+    id: "blog",
+    title: "Writing about frontend systems, tooling, and product engineering",
+    description: "Nine markdown-backed notes are surfaced here in a strict 3 by 3 grid. The article routes are generated separately for static hosting.",
+    body: `<div class="home-page__blog-grid">${articles.slice(0, 9).map(article => renderBlogCard(article, basePath)).join("")}</div>`
+  })}
 
       <footer class="home-page__footer"><p>Valery FrameMuse Zinchenko</p><div class="home-page__footer-links">${portfolioContent.contacts.map(contact => `<a href="${escapeHtml(contact.href)}"${contact.kind === "email" ? "" : ' rel="noreferrer" target="_blank"'}>${escapeHtml(contact.label)}</a>`).join("")}</div></footer>
     </main>
