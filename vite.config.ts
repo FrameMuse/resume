@@ -8,6 +8,7 @@ import {
   renderArticlePageDocument,
   renderHomePageDocument,
 } from "./ssr/render"
+import { renderLandingPageDocument } from "./ssr/renderLanding"
 
 
 function resolveBase() {
@@ -47,7 +48,7 @@ function staticRenderPlugin() {
       const articles = await readArticles(blogsDir)
       const { linkTags } = extractHeadAssets(html)
 
-      return renderHomePageDocument({
+      return renderLandingPageDocument({
         articles,
         basePath,
         linkTags,
@@ -65,32 +66,45 @@ function staticRenderPlugin() {
 
         const pathname = requestUrl.split("?")[0]
         const trimmedPath = stripLeadingBase(pathname, basePath)
+        const plainMatch = trimmedPath.match(/^\/(?:resume\/)?plain\/?$/)
         const articleMatch = trimmedPath.match(/^\/blog\/([^/]+)\/?$/)
 
-        if (articleMatch == null) {
+        if (plainMatch == null && articleMatch == null) {
           next()
           return
         }
 
-        const slug = decodeURIComponent(articleMatch[1])
         const [indexTemplate, articles] = await Promise.all([
           readFile(indexTemplatePath, "utf8"),
           readArticles(blogsDir)
         ])
 
-        const article = articles.find(candidate => candidate.slug === slug)
-        if (article == null) {
+        const { linkTags } = extractHeadAssets(indexTemplate)
+        const html = plainMatch
+          ? renderHomePageDocument({
+            articles,
+            basePath,
+            linkTags
+          })
+          : (() => {
+            const slug = decodeURIComponent(articleMatch![1])
+            const article = articles.find(candidate => candidate.slug === slug)
+            if (article == null) {
+              return null
+            }
+
+            return renderArticlePageDocument({
+              article,
+              basePath,
+              linkTags,
+              recentArticles: articles.filter(candidate => candidate.slug !== slug).slice(0, 3)
+            })
+          })()
+
+        if (html == null) {
           next()
           return
         }
-
-        const { linkTags } = extractHeadAssets(indexTemplate)
-        const html = renderArticlePageDocument({
-          article,
-          basePath,
-          linkTags,
-          recentArticles: articles.filter(candidate => candidate.slug !== slug).slice(0, 3)
-        })
 
         res.statusCode = 200
         res.setHeader("Content-Type", "text/html; charset=utf-8")

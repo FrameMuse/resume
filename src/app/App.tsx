@@ -2,6 +2,7 @@ import "./App.scss"
 
 import BlogArticlePage from "@/pages/BlogArticlePage/BlogArticlePage"
 import HomePage from "@/pages/HomePage/HomePage"
+import LandingPage from "@/pages/LandingPage/LandingPage"
 import { stripBaseUrl } from "@/shared/utils/baseUrl"
 
 
@@ -18,9 +19,17 @@ function App() {
     )
   }
 
+  if (normalizedPath === "/plain" || normalizedPath === "/resume/plain") {
+    return (
+      <div className="app-shell">
+        <HomePage />
+      </div>
+    )
+  }
+
   return (
     <div className="app-shell">
-      <HomePage />
+      <LandingPage />
     </div>
   )
 }

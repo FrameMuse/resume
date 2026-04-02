@@ -9,6 +9,7 @@ import {
   renderArticlePageDocument,
   renderHomePageDocument,
 } from "./render"
+import { renderLandingPageDocument } from "./renderLanding"
 
 async function buildStaticSite() {
   const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
@@ -24,13 +25,23 @@ async function buildStaticSite() {
   const { iconHref, linkTags } = extractHeadAssets(builtIndexHtml)
   const basePath = inferBasePath(iconHref)
 
-  const homePageHtml = renderHomePageDocument({
+  const homePageHtml = renderLandingPageDocument({
+    articles,
+    basePath,
+    linkTags
+  })
+
+  const plainResumeHtml = renderHomePageDocument({
     articles,
     basePath,
     linkTags
   })
 
   await writeFile(builtIndexHtmlPath, homePageHtml, "utf8")
+  await mkdir(path.join(buildDir, "plain"), { recursive: true })
+  await mkdir(path.join(buildDir, "resume", "plain"), { recursive: true })
+  await writeFile(path.join(buildDir, "plain", "index.html"), plainResumeHtml, "utf8")
+  await writeFile(path.join(buildDir, "resume", "plain", "index.html"), plainResumeHtml, "utf8")
 
   await mkdir(path.join(buildDir, "blog"), { recursive: true })
 

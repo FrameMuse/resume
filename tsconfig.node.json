@@ -12,6 +12,7 @@
     "vite.*.ts",
     "ssr",
     "src/entities/profile/model/portfolioContent.ts",
+    "src/entities/profile/model/showcaseContent.ts",
     "src/features/blog/lib/parseBlog.ts"
   ]
 }
