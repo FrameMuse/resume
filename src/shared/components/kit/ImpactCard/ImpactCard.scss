@@ -3,9 +3,16 @@
 .impact-card {
   @include surface;
 
+  position: relative;
   display: grid;
   gap: 1.2rem;
   padding: 1.4rem;
+}
+
+.impact-card__toggle-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .impact-card__header {
@@ -49,17 +56,47 @@
   font: 500 0.92rem/1 var(--font-copy);
 }
 
+.impact-card__toggle-open,
+.impact-card__toggle-close {
+  display: inline;
+}
+
+.impact-card__toggle-close {
+  display: none;
+}
+
 .impact-card__toggle-icon {
   transition: transform 220ms ease;
 }
 
-.impact-card__toggle-icon--expanded {
+.impact-card__details-shell {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 260ms ease;
+}
+
+.impact-card__toggle-input:checked ~ .impact-card__details-shell {
+  grid-template-rows: 1fr;
+}
+
+.impact-card__toggle-input:checked ~ .impact-card__header .impact-card__toggle-open {
+  display: none;
+}
+
+.impact-card__toggle-input:checked ~ .impact-card__header .impact-card__toggle-close {
+  display: inline;
+}
+
+.impact-card__toggle-input:checked ~ .impact-card__header .impact-card__toggle-icon {
   transform: rotate(180deg);
 }
 
 .impact-card__details {
   display: grid;
   gap: 0.8rem;
+  min-height: 0;
+  overflow: hidden;
   padding-top: 0.2rem;
   color: var(--color-text-soft);
   line-height: 1.68;

@@ -1,7 +1,5 @@
 import "./HomePage.scss"
 
-import { useEffect } from "react"
-
 import { portfolioContent } from "@/entities/profile/model/portfolioContent"
 import { getAllBlogArticles } from "@/features/blog/lib/articles"
 import Button from "@/shared/components/intrinsic/Button/Button"
@@ -32,10 +30,6 @@ const contactIconMap = {
 } as const
 
 function HomePage() {
-  useEffect(() => {
-    document.title = "Valery FrameMuse Zinchenko — Resume & Portfolio"
-  }, [])
-
   const articles = getAllBlogArticles().slice(0, 9)
 
   return (

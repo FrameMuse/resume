@@ -1,7 +1,5 @@
 import "./BlogArticlePage.scss"
 
-import { useEffect } from "react"
-
 import { getAllBlogArticles, getBlogArticleBySlug } from "@/features/blog/lib/articles"
 import Chip from "@/shared/components/intrinsic/Chip/Chip"
 import Icon, { IconName } from "@/shared/components/intrinsic/Icon/Icon"
@@ -15,12 +13,6 @@ interface BlogArticlePageProps {
 function BlogArticlePage({ slug }: BlogArticlePageProps) {
   const article = getBlogArticleBySlug(slug)
   const recentArticles = getAllBlogArticles().filter(candidate => candidate.slug !== slug).slice(0, 3)
-
-  useEffect(() => {
-    document.title = article == null
-      ? "Article not found — FrameMuse"
-      : `${article.title} — FrameMuse`
-  }, [article])
 
   if (article == null) {
     return (

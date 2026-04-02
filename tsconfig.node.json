@@ -10,6 +10,8 @@
   "include": [
     "vite.config.ts",
     "vite.*.ts",
-    "ssr"
+    "ssr",
+    "src/entities/profile/model/portfolioContent.ts",
+    "src/features/blog/lib/parseBlog.ts"
   ]
 }
