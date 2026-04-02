@@ -170,22 +170,27 @@ function HomePage() {
           <div className="home-page__experience-list">
             {portfolioContent.experience.map(entry => (
               <article key={`${entry.company}-${entry.period}`} className="home-page__experience-card">
-                <div className="home-page__experience-topline">
-                  <span>{entry.company}</span>
-                  <span>{entry.period}</span>
+                <p className="home-page__experience-period">{entry.period}</p>
+                <div className="home-page__experience-marker" aria-hidden="true">
+                  <span className="home-page__experience-node" />
                 </div>
-                <h3>{entry.role}</h3>
-                <p className="home-page__experience-location">{entry.location}</p>
-                <p className="home-page__experience-summary">{entry.summary}</p>
-                <ul className="home-page__experience-bullets">
-                  {entry.bullets.map(bullet => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-                <div className="home-page__experience-stack">
-                  {entry.stack.map(item => (
-                    <Chip key={item} tone="accent">{item}</Chip>
-                  ))}
+                <div className="home-page__experience-body">
+                  <div className="home-page__experience-topline">
+                    <span className="home-page__experience-company">{entry.company}</span>
+                    <span>{entry.location}</span>
+                  </div>
+                  <h3>{entry.role}</h3>
+                  <p className="home-page__experience-summary">{entry.summary}</p>
+                  <ul className="home-page__experience-bullets">
+                    {entry.bullets.map(bullet => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                  <div className="home-page__experience-stack">
+                    {entry.stack.map(item => (
+                      <Chip key={item} tone="accent">{item}</Chip>
+                    ))}
+                  </div>
                 </div>
               </article>
             ))}
