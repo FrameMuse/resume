@@ -32,11 +32,11 @@
   box-shadow: var(--shadow-flat);
   backdrop-filter: blur(12px);
 
-  @if $tone == "strong" {
+  @if $tone =="strong" {
     background: var(--color-surface-strong);
   }
 
-  @if $tone == "dark" {
+  @if $tone =="dark" {
     background: var(--color-surface-dark);
     color: var(--color-ink-inverse);
     border-color: rgba(248, 245, 238, 0.16);

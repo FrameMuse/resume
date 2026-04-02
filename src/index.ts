@@ -11,7 +11,7 @@ import App from "@/app/App"
 const rootElement = document.getElementById("root")
 
 if (rootElement == null) {
-	throw new Error("Root element was not found")
+  throw new Error("Root element was not found")
 }
 
 createRoot(rootElement).render(createElement(App))
