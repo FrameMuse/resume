@@ -1,0 +1,20 @@
+name: Deploy GitHub Pages Blogs
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - .github/workflows/deploy-pages-blogs.yml
+      - blogs/**
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/_deploy-pages.yml
+    secrets: inherit
