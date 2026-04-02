@@ -10,11 +10,43 @@ body,
 
 body {
   font-family: var(--font-copy);
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--color-text);
   background:
-    radial-gradient(circle at top left, rgba(15, 138, 129, 0.16), transparent 34%),
-    radial-gradient(circle at top right, rgba(203, 110, 53, 0.14), transparent 30%),
+    radial-gradient(circle at top left, rgba(15, 138, 126, 0.1), transparent 34%),
+    radial-gradient(circle at top right, rgba(53, 118, 203, 0.2), transparent 30%),
     linear-gradient(180deg, var(--color-bg) 0%, #f4ede0 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 6vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.45rem);
+}
+
+h4 {
+  font-size: 1.05rem;
+}
+
+h5 {
+  font-size: 0.95rem;
 }
 
 body::before {

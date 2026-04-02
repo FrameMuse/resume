@@ -38,7 +38,10 @@
 }
 
 .home-page-header__brand-text {
-  font: 700 1rem/1 var(--font-display);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
   letter-spacing: -0.04em;
 }
 
@@ -106,7 +109,8 @@
 
 .home-page__hero-title {
   max-width: 12ch;
-  font: 700 clamp(3rem, 8vw, 5.8rem) / 0.92 var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  line-height: 0.92;
   letter-spacing: -0.07em;
 }
 
@@ -146,8 +150,7 @@
 }
 
 .home-page__manifest-title {
-  font: 700 clamp(1.8rem, 3vw, 2.6rem) / 0.98 var(--font-display);
-  letter-spacing: -0.05em;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 
 .home-page__manifest-item,
@@ -192,12 +195,12 @@
 }
 
 .home-page__contact-link strong,
-.home-page__principles-list strong,
-.home-page__skill-card h3,
-.home-page__initiative-card h3,
-.home-page__experience-card h3 {
+.home-page__principles-list strong {
   display: block;
-  font: 700 1.15rem/1.1 var(--font-display);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.04em;
 }
 
@@ -427,8 +430,8 @@
 }
 
 .home-page__project-section-header h3 {
-  font: 700 clamp(1.45rem, 2vw, 2rem) / 1.02 var(--font-display);
-  letter-spacing: -0.05em;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.02;
 }
 
 .home-page__project-section-header p {
